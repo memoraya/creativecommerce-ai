@@ -9,20 +9,24 @@ export default function Home() {
         <p className="font-display text-xl text-muted sm:text-2xl">
           CreativeCommerce<span className="text-accent">.ai</span>
         </p>
+        <div className="mt-6">
+          <p className="font-display text-base">Memo Raya</p>
+          <p className="mt-1 text-sm text-muted">Adobe Commerce Champion · AI &amp; Commerce Strategist</p>
+        </div>
         <h1 className="mt-5 max-w-3xl font-display text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-          The customer has already changed.
+          Someone asked AI about your product today.
           <br />
-          The org chart hasn&rsquo;t.
+          It was either part of the answer.
+          <br />
+          Or it wasn&rsquo;t.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-          AI is changing how people discover, decide, and experience
-          things — and it&rsquo;s starting to expose how much of the modern
-          organization wasn&rsquo;t built for this. This is where I think out
-          loud about what that means.
+          Creative Commerce is where I work on what determines which side of
+          that line your products land on.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
           <Link href="/perspectives/why-creative-commerce" className={cta}>
-            Start with &ldquo;Why Creative Commerce&rdquo; <Arrow />
+            Read the thinking <Arrow />
           </Link>
           <a href="mailto:g.raya2486@gmail.com" className={ctaMuted}>
             Let&rsquo;s talk <Arrow />
@@ -150,36 +154,25 @@ export default function Home() {
             </p>
             <ul className="mt-8 space-y-3 text-lg">
               <li className="flex gap-3">
+                <span className="text-accent">—</span> Speaker — From SEO to GEO: AI-Driven Discovery for Commerce (Adobe, June 2026)
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent">—</span> Participant — Adobe Agentic Marketing Garage, Adobe HQ (June 2026)
+              </li>
+              <li className="flex gap-3">
                 <span className="text-accent">—</span> Adobe Commerce Champion
               </li>
               <li className="flex gap-3">
-                <span className="text-accent">—</span> Member, Adobe&rsquo;s
-                AI-focused Champion initiative
+                <span className="text-accent">—</span> Member, Adobe&rsquo;s AI-focused Champion initiative
               </li>
               <li className="flex gap-3">
-                <span className="text-accent">—</span> Speaker, Adobe Summit
+                <span className="text-accent">—</span> Speaker — Adobe Summit
               </li>
               <li className="flex gap-3">
-                <span className="text-accent">—</span> Contributor, Adobe
-                Experience League
+                <span className="text-accent">—</span> Contributor — Adobe Experience League
               </li>
               <li className="flex gap-3">
-                <span className="text-accent">—</span> Ongoing collaboration
-                with Adobe product and partner teams
-              </li>
-              <li className="flex flex-wrap items-center gap-3 text-muted">
-                <span className="text-accent">—</span> Agentic Marketing
-                Garage, Adobe HQ
-                <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                  (upcoming)
-                </span>
-              </li>
-              <li className="flex flex-wrap items-center gap-3 text-muted">
-                <span className="text-accent">—</span> Webinar on AI, GEO, and
-                digital discovery
-                <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                  (upcoming)
-                </span>
+                <span className="text-accent">—</span> Ongoing collaboration with Adobe product and partner teams
               </li>
             </ul>
           </div>
@@ -221,23 +214,6 @@ export default function Home() {
                 </span>
               </Link>
 
-              <div className="rounded-lg border border-border/50 p-6 opacity-50">
-                <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                  Field Note
-                </span>
-                <p className="mt-2 font-display text-xl">
-                  Notes from the Agentic Marketing Garage
-                </p>
-                <p className="mt-1 text-sm text-muted">Coming soon</p>
-              </div>
-
-              <div className="rounded-lg border border-border/50 p-6 opacity-50">
-                <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                  Article ↗ Experience League
-                </span>
-                <p className="mt-2 font-display text-xl">Title TBD</p>
-                <p className="mt-1 text-sm text-muted">Coming soon</p>
-              </div>
             </div>
 
             <Link href="/perspectives" className={`${cta} mt-10`}>

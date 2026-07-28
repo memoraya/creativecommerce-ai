@@ -38,25 +38,11 @@ export default function PerspectivesPage() {
             Read the essay <Arrow />
           </span>
         </Link>
-
-        <div className="rounded-lg border border-border/50 p-6 opacity-50">
-          <span className="font-mono text-xs uppercase tracking-wider text-muted">
-            Field Note
-          </span>
-          <p className="mt-2 font-display text-xl">
-            Notes from the Agentic Marketing Garage
-          </p>
-          <p className="mt-1 text-sm text-muted">Coming soon</p>
-        </div>
-
-        <div className="rounded-lg border border-border/50 p-6 opacity-50">
-          <span className="font-mono text-xs uppercase tracking-wider text-muted">
-            Article ↗ Experience League
-          </span>
-          <p className="mt-2 font-display text-xl">Title TBD</p>
-          <p className="mt-1 text-sm text-muted">Coming soon</p>
-        </div>
       </div>
+
+      <p className="mt-10 font-mono text-xs text-muted/50">
+        More perspectives coming — no schedule.
+      </p>
     </div>
   );
 }

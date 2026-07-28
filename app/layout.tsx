@@ -22,24 +22,24 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://creativecommerce.ai"),
   title: {
-    default: "CreativeCommerce.ai",
-    template: "%s · CreativeCommerce.ai",
+    default: "Creative Commerce | AI-Native Commerce, Cinematic Content & Education",
+    template: "%s · Creative Commerce",
   },
   description:
-    "Commerce is becoming a creative discipline. CreativeCommerce.ai is where Memo Raya writes about the convergence of commerce, content, data, and AI — and what it means for how organizations are built.",
+    "Creative Commerce helps organizations become AI-native through enterprise commerce, cinematic content, and executive education.",
   openGraph: {
-    title: "CreativeCommerce.ai",
+    title: "Creative Commerce | AI-Native Commerce, Cinematic Content & Education",
     description:
-      "Commerce is becoming a creative discipline. Notes on the convergence of commerce, content, data, and AI.",
+      "Creative Commerce helps organizations become AI-native through enterprise commerce, cinematic content, and executive education.",
     url: "https://creativecommerce.ai",
-    siteName: "CreativeCommerce.ai",
+    siteName: "Creative Commerce",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CreativeCommerce.ai",
+    title: "Creative Commerce | AI-Native Commerce, Cinematic Content & Education",
     description:
-      "Commerce is becoming a creative discipline. Notes on the convergence of commerce, content, data, and AI.",
+      "Creative Commerce helps organizations become AI-native through enterprise commerce, cinematic content, and executive education.",
   },
 };
 

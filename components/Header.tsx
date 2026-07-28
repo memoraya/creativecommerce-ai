@@ -18,6 +18,12 @@ export default function Header() {
 
         <nav className="flex items-center gap-4 text-xs sm:gap-8 sm:text-sm">
           <Link
+            href="/#practices"
+            className="text-muted transition-colors hover:text-foreground"
+          >
+            Work
+          </Link>
+          <Link
             href="/perspectives"
             className="text-muted transition-colors hover:text-foreground"
           >

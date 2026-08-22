@@ -2,14 +2,18 @@
 
 import { useState } from "react";
 import { primaryButton } from "../theme";
-import { MENSAJE_MAX_LENGTH } from "../config";
+import {
+  MENSAJE_MAX_LENGTH,
+  MERCADOPAGO_CHECKOUT_LABEL,
+  MERCADOPAGO_CHECKOUT_URL,
+} from "../config";
 
-type Status = "idle" | "submitting" | "error" | "sold_out";
+type Status = "idle" | "submitting" | "error";
 
 const inputClass =
-  "w-full rounded-sm border border-[#1C1712]/20 bg-[#FBF6E9] px-4 py-3 text-base text-[#1C1712] placeholder:text-[#6B5E4E]/60 transition-colors focus:border-[#8A2C22] focus:outline-none focus:ring-1 focus:ring-[#8A2C22]";
+  "w-full rounded-sm border border-[#0B0A09]/20 bg-white px-4 py-3.5 text-base text-[#0B0A09] placeholder:text-[#57514A]/60 transition-colors focus:border-[#D97757] focus:outline-none focus:ring-1 focus:ring-[#D97757]";
 
-const labelClass = "text-sm font-medium text-[#1C1712]";
+const labelClass = "text-sm font-medium text-[#0B0A09]";
 
 export default function RegistrationForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -29,42 +33,24 @@ export default function RegistrationForm() {
     };
 
     try {
-      const res = await fetch("/api/ia-sin-computadora/register", {
+      const res = await fetch("/api/ia-sin-computadora/registro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => null);
 
-      if (res.status === 409 || data?.error === "sold_out") {
-        setStatus("sold_out");
-        return;
-      }
-
-      if (!res.ok || !data?.url) {
+      if (!res.ok || !data?.ok) {
         throw new Error();
       }
 
-      // Full navigation to Stripe's hosted checkout — not a client route.
-      window.location.href = data.url;
+      // Registration saved — only now do we send the visitor to Mercado
+      // Pago. Full navigation, not a client route (external checkout).
+      window.location.href = MERCADOPAGO_CHECKOUT_URL;
     } catch {
       setStatus("error");
       setError("Algo salió mal. Intenta de nuevo o escríbenos directamente.");
     }
-  }
-
-  if (status === "sold_out") {
-    return (
-      <div className="rounded-sm border border-[#1C1712]/20 bg-[#FBF6E9] px-6 py-8 text-center">
-        <p className="font-display text-xl text-[#1C1712]">
-          Se llenó el cupo para este evento.
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-[#4A4238]">
-          Los 20 lugares ya están reservados. Escríbenos si quieres que te
-          avisemos de la próxima fecha.
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -103,7 +89,7 @@ export default function RegistrationForm() {
 
       <div className="space-y-2">
         <label htmlFor="whatsapp" className={labelClass}>
-          WhatsApp <span className="font-normal text-[#6B5E4E]">(opcional)</span>
+          WhatsApp <span className="font-normal text-[#57514A]">(opcional)</span>
         </label>
         <input
           id="whatsapp"
@@ -119,7 +105,7 @@ export default function RegistrationForm() {
       <div className="space-y-2">
         <label htmlFor="mensaje" className={labelClass}>
           ¿Qué es lo que más te cuesta hoy al trabajar con IA?{" "}
-          <span className="font-normal text-[#6B5E4E]">(opcional)</span>
+          <span className="font-normal text-[#57514A]">(opcional)</span>
         </label>
         <textarea
           id="mensaje"
@@ -129,14 +115,14 @@ export default function RegistrationForm() {
           className={`${inputClass} resize-none`}
           placeholder="Cuéntame en un par de líneas…"
         />
-        <p className="text-xs leading-relaxed text-[#6B5E4E]">
+        <p className="text-xs leading-relaxed text-[#57514A]">
           Es opcional. Podemos usar algunas de estas respuestas para preparar
           mejor la conversación.
         </p>
       </div>
 
       {error ? (
-        <p role="alert" className="text-sm text-[#8A2C22]">
+        <p role="alert" className="text-sm text-[#D97757]">
           {error}
         </p>
       ) : null}
@@ -146,11 +132,13 @@ export default function RegistrationForm() {
         disabled={status === "submitting"}
         className={`${primaryButton} w-full disabled:opacity-60`}
       >
-        {status === "submitting" ? "Conectando con Stripe…" : "Reservar mi lugar — $700 MXN"}
+        {status === "submitting"
+          ? "Guardando tu registro…"
+          : `Continuar al pago — ${MERCADOPAGO_CHECKOUT_LABEL}`}
       </button>
 
-      <p className="text-center text-xs text-[#6B5E4E]">
-        Pago seguro con Stripe. Tu lugar se confirma al completar el pago.
+      <p className="text-center text-xs text-[#57514A]">
+        Serás redirigido a Mercado Pago para completar tu pago.
       </p>
     </form>
   );

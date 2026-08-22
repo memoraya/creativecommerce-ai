@@ -7,8 +7,9 @@ export const EVENT_CAPACITY = 20;
 export const TICKET_PRICE_MXN = 700;
 export const MENSAJE_MAX_LENGTH = 500;
 
-// TEMPORARY: MVP payment flow bypasses the Stripe registration API/form
-// (kept in place, unused for now) and links straight to a Mercado Pago
-// checkout link instead. This is the $20 MXN TEST link — swap it for the
-// real $700 MXN production link here when ready to go live.
-export const MERCADOPAGO_CHECKOUT_URL = "https://mpago.la/2Uz2C4j";
+// TEMPORARY: MVP payment flow bypasses the Stripe checkout API (kept in
+// place, unused for now). The registration form now saves to Google Sheets
+// (status PENDING, manually reconciled) then sends the visitor to this
+// Mercado Pago checkout link. This is the production $700 MXN link.
+export const MERCADOPAGO_CHECKOUT_URL = "https://mpago.la/18zgcRJ";
+export const MERCADOPAGO_CHECKOUT_LABEL = "$700 MXN";

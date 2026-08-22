@@ -6,7 +6,7 @@ export default function Scribble({ children }: { children: React.ReactNode }) {
       {children}
       <svg
         aria-hidden
-        className="absolute -bottom-1.5 left-0 w-full text-[#8A2C22]"
+        className="absolute -bottom-1.5 left-0 w-full text-[#D97757]"
         height="8"
         viewBox="0 0 100 8"
         preserveAspectRatio="none"

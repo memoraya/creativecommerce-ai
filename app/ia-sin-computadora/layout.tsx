@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F5EEDC",
+  themeColor: "#F2F0EB",
 };
 
 export default function IaSinComputadoraLayout({
@@ -41,7 +41,7 @@ export default function IaSinComputadoraLayout({
 }) {
   return (
     <div
-      className={`${caveat.variable} min-h-screen bg-[#F5EEDC] font-sans text-[#1C1712] [background-image:radial-gradient(circle_at_1px_1px,rgba(28,23,18,0.05)_1px,transparent_0)] [background-size:22px_22px]`}
+      className={`${caveat.variable} min-h-screen bg-[#F2F0EB] font-sans text-[#0B0A09]`}
       style={{ colorScheme: "light" }}
     >
       {children}

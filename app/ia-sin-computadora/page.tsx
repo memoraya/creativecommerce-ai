@@ -1,12 +1,7 @@
+import EventVideo from "./components/EventVideo";
 import RegistrationForm from "./components/RegistrationForm";
 import Scribble from "./components/Scribble";
 import { cardShell, kicker, primaryButton, sectionShell, venue } from "./theme";
-
-// Event video section is temporarily disabled — the component itself
-// (./components/EventVideo) is untouched and stays ready to drop back in
-// once the cinematic piece is ready. Re-enable by importing it above and
-// restoring the section that used to sit between the hero and "Por qué
-// esta conversación" below.
 
 const CONTRASTS = [
   {
@@ -91,6 +86,11 @@ export default function IaSinComputadoraPage() {
         <a href="#registro" className={`${primaryButton} mt-8 w-full sm:w-auto`}>
           Reservar mi lugar
         </a>
+      </section>
+
+      {/* ── Video ─────────────────────────────────────────────── */}
+      <section className={`${sectionShell} pb-14 sm:pb-20`}>
+        <EventVideo src="/videos/ia-sin-computadora.mp4" />
       </section>
 
       {/* ── Why this conversation exists ─────────────────────── */}

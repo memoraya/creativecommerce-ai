@@ -8,15 +8,29 @@ export default function EventVideo({
   poster?: string;
 }) {
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-[#E3D6B8] bg-[#EDE4CC] shadow-[0_1px_0_0_rgba(28,23,18,0.04)]">
+    <div
+      className={
+        src
+          ? "relative mx-auto w-full max-w-xs overflow-hidden rounded-sm border border-[#E3D6B8] bg-[#EDE4CC] shadow-[0_1px_0_0_rgba(28,23,18,0.04)] sm:max-w-sm"
+          : "relative aspect-video w-full overflow-hidden rounded-sm border border-[#E3D6B8] bg-[#EDE4CC] shadow-[0_1px_0_0_rgba(28,23,18,0.04)]"
+      }
+    >
       {src ? (
         <video
-          className="h-full w-full object-cover"
+          className="block h-full w-full object-cover"
+          style={{ aspectRatio: "1080 / 1908" }}
           src={src}
           poster={poster}
           controls
           playsInline
-        />
+          preload="metadata"
+        >
+          Tu navegador no soporta la reproducción de este video. Puedes{" "}
+          <a href={src} className="underline">
+            descargarlo aquí
+          </a>
+          .
+        </video>
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
           <div

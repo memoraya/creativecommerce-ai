@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 // Standalone microsites (e.g. event landing pages) render their own chrome
 // and skip the main site's nav/footer entirely.
-const STANDALONE_PREFIXES = ["/ia-sin-computadora"];
+const STANDALONE_PREFIXES = ["/ia-sin-computadora", "/films"];
 
 export default function SiteChrome({
   children,
